@@ -18,4 +18,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', router)
 
+hbs.registerHelper("inc", function(value, options)
+{
+    return parseInt(value) + 1;
+});
+
 module.exports = app

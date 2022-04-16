@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
 
 body {
   font-family: 'Lato', sans-serif;
@@ -18,3 +19,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 input[type=number] { -moz-appearance:textfield; }
+
+.title-section
+{
+  font-family: 'Preahvihear', sans-serif;
+}
+
+.normal-text{
+  font-family: 'Lato', sans-serif;
+}

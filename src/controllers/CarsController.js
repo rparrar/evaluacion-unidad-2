@@ -1,6 +1,7 @@
 const CarsDAO = require('../models/dao/CarsDAO')
 
 class CarsController {
+  
   constructor (db) {
     this.carsDao = new CarsDAO(db)
     this.renderHomeWithCars = this.renderHomeWithCars.bind(this)
@@ -14,9 +15,12 @@ class CarsController {
 
   async renderHomeWithCars (req, res) {
     const cars = await this.carsDao.getAll()
+    const totalvehicles = cars.length
+    
     res.render('home', {
       cars,
       title : "INICIO",
+      totalvehicles,
       activehome : 1
     })
   }
