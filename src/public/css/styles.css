@@ -28,3 +28,7 @@ input[type=number] { -moz-appearance:textfield; }
 .normal-text{
   font-family: 'Lato', sans-serif;
 }
+
+.image-about-system{
+  width: 150px;
+}

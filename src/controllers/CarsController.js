@@ -45,13 +45,14 @@ class CarsController {
       })
     } catch (error) {
       console.log(error)
-      res.status(500).render('500')
+      res.status(500).render('500',{
+        title : "ERROR EN EL SERVIDOR"
+      })
     }
   }
 
   renderCarCreationForm (req, res) {
     res.render('car-form', {
-      
       title : "AGREGANDO NUEVO VEHICULO",
       activeadd : 1
     })
@@ -74,11 +75,14 @@ class CarsController {
         brand: car.brand,
         model: car.model,
         price: car.price,
-        stock: car.stock
+        stock: car.stock,
+        title : "ACTUALIZANDO VEHICULO",
       })
     } catch (error) {
       console.log(error)
-      res.status(500).render('500')
+      res.status(500).render('500',{
+        title : "ERROR EN EL SERVIDOR"
+      })
     }
   }
 
@@ -96,7 +100,9 @@ class CarsController {
       res.redirect(`/cars/${id}`)
     } catch (error) {
       console.log(error)
-      res.status(500).render('500')
+      res.status(500).render('500',{
+        title : "ERROR EN EL SERVIDOR"
+      })
     }
   }
 
@@ -114,7 +120,9 @@ class CarsController {
       res.redirect(`/cars/${id}`)
     } catch (error) {
       console.log(error)
-      res.status(500).render('500')
+      res.status(500).render('500',{
+        title : "ERROR EN EL SERVIDOR"
+      })
     }
   }
 
@@ -132,13 +140,16 @@ class CarsController {
       await this.carsDao.delete(id)
 
       res.render('car-deleted', {
+        title : "VEHICULO ELIMINADO",
         id : car.id,
         brand : car.brand,
         model : car.model
       })
     } catch (error) {
       console.log(error)
-      res.status(500).render('500')
+      res.status(500).render('500',{
+        title : "ERROR EN EL SERVIDOR"
+      })
     }
   }
 }
