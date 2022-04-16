@@ -1,0 +1,92 @@
+{{> navbar}}
+  <!--
+    Este formulario se usará tanto para edición como creación, este if nos dice que si viene un id, entonces será un update, si no, será un create.
+    Para el action, si viene un id será un post a /articles/:id/update, si no, será un post a /articles/create.
+  -->
+<form action="/cars/{{#if id}}{{id}}/update{{else}}create{{/if}}" method="POST">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-center text-danger">
+            {{#if id}}
+              <i class="fas fa-fw fa-edit"></i> ACTUALIZA VEHICULO 
+              <p class="alert alert-primary mt-1">{{brand}} {{model}}</p>
+            {{else}}
+              <i class="fas fa-fw fa-plus text-success"></i><i class="fas fa-fw fa-car-side text-primary"></i> CREANDO NUEVO VEHICULO
+            {{/if}}
+          </h1>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="text-primary" for="brand">MARCA DEL VEHICULO</label>
+              <input autofocus required type="text" class="form-control" name="brand" placeholder="EJ. SUZUKI" value="{{brand}}">
+            </div>
+            <div class="col-md-6">
+              <label class="text-primary" for="model">MODELO DEL VEHICULO</label>
+              <input type="text" required class="form-control" name="model" placeholder="EJ. CELERIO" value="{{model}}">
+            </div>
+            <div class="col-md-6 mt-2">
+              <label class="text-primary" for="price">PRECIO</label>
+              <input type="number" required class="form-control text-right" name="price" placeholder="EJ. 5500000" value="{{price}}">
+            </div>
+            <div class="col-md-6 mt-2">
+              <label class="text-primary" for="stock">STOCK</label>
+              <input type="number" required class="form-control text-right" name="stock" placeholder="EJ. 10" value="{{stock}}">
+            </div>
+            <div class="col-md-12 mt-2">
+              <label class="text-primary" for="image">IMAGEN (OPCIONAL)</label>
+              <input type="text" class="form-control" name="image" placeholder="DEBE PEGAR EL ENLACE WEB A LA IMAGEN" value="{{image}}">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+              <a href="/" class="btn btn-danger"><i class="fas fa-fw fa-undo"></i> CANCELAR</a>
+            </div>
+            <div class="col-md-6 text-center">
+              {{#if id}}
+                <button type="submit" class="btn btn-success"><i class="fas fa-fw fa-edit"></i> ACTUALIZAR CAMBIOS</button>
+              {{else}}
+                <button type="submit" class="btn btn-primary"><i class="fas fa-fw fa-check"></i><i class="fas fa-fw fa-car"></i> AGREGA VEHICULO</button>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+  
+<div class="row justify-content-center mt-3">
+  <div class="col-md-7">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="text-center text-primary"><i class="fas fa-fw fa-magic"></i> IMAGENES RAPIDAS PARA COPIAR / PEGAR</h5>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped table-hover table-bordered table-sm w-100">
+            <thead>
+              <tr>
+                <th>
+                  IMAGEN
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+                  <tr><td>https://www.elcarrocolombiano.com/wp-content/uploads/2016/06/20151028-SUZUKI-CELERIO-01B.jpg</td></tr>
+                  <tr><td>https://www.autoweb.com.ar/wp-content/uploads/2020/11/HB-S-Fondo-Gris-1024x724.jpg</td></tr>
+                  <tr><td>https://img.motoryracing.com/noticias/portada/27000/27861-n.jpg</td></tr>
+                  <tr><td>https://imagenes.km77.com/fotos/bbtcontent/clippingnew/KM7KPH20200219_0009/full-original.jpg</td></tr>
+                  <tr><td>https://www.elcarrocolombiano.com/wp-content/uploads/2016/05/20160501-FIAT-147-01.jpg</td></tr>
+                  <tr><td>https://acnews.blob.core.windows.net/imgnews/medium/NAZ_5e24773059f24d70985cb547bc7a0cdf.jpg</td></tr>
+                  <tr><td>https://cloudfront-us-east-1.images.arcpublishing.com/copesa/PSLHNGQ43VBHVNTA54SC7AQOZQ.jpg</td></tr>
+                  <tr><td>https://cdn.wheel-size.com/automobile/body/suzuki-ciaz-2019-2022-1625035535.5606313.jpg</td></tr>
+              </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

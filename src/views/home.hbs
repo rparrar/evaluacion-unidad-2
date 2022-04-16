@@ -1,0 +1,49 @@
+{{> navbar}}
+{{> header}}
+  <div class="row justify-content-center">
+    {{#unless cars}}
+      <div class="row justify-content-center">
+        <div class="col text-center">
+          <div class="alert alert-danger">
+            <i class="fas fa-fw fa-exclamation-triangle fa-3x"></i>
+            <h1>SIN VEHICULOS INGRESADOS!</h1>
+          </div>
+        </div>
+      </div>
+    {{/unless }}
+    <div class="col-md-8">
+      <div class="alert alert-info text-center">VEHICULOS DISPONIBLES, CLICK EN BOTON VER DETALLES, O EN LA IMAGEN</div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    {{#each cars}}
+        <div class="col-md-3 mb-3">
+          <div class="card h-100">
+            <div class="card-header">
+              <h5 class="text-center">{{this.brand}} {{this.model}}</h5>
+            </div>
+            {{#if this.image}}
+              <a class="mx-auto" href="/cars/{{this.id}}"><img src="{{this.image}}" class="mt-2 img-fluid img-thumbnail" style="width: 200px; height:150px"></a>
+            {{else}}
+              <a class="mx-auto" href="/cars/{{this.id}}"><img src="/img/sin-imagen.jpg" class="mt-2 img-fluid img-thumbnail" style="width: 200px; height:150px"></a> 
+            {{/if}}
+
+            <div class="card-body">
+              <h3 class="text-primary text-center"><i class="fas fa-fw fa-dollar-sign"></i> {{this.price}}</h3>
+              <div class="row">
+                <div class="col-md-6">
+                <p class="text-center text-success mt-2">
+                  EN STOCK<span class="badge badge-danger ml-2">{{this.stock}}</span>
+                </p>
+              </div>
+              <div class="col-md-6 mt-2">
+                <a href="/cars/{{this.id}}" class="btn btn-info btn-sm">
+                  <i class="fas fa-fw fa-search"></i> VER DETALLES</span>
+                </a>
+              </div>
+              </div>
+            </div>
+        </div> 
+      </div>
+    {{/each}}      
+  </div>      

@@ -1,0 +1,54 @@
+{{> navbar}}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <h1 class="text-center alert alert-info"><i class="fas fa-fw fa-car-side"></i> DETALLES DEL VEHICULO</h1>
+    <hr>
+  </div>
+  <div class="col-md-6">
+    <div class="card pt-3">
+      {{#if this.image}}
+        <img src="{{this.image}}" class="mx-auto card-img-top img-thumbnail img-fluid" style="width: 500px;" alt="Imagen vehiculo" />
+      {{else}}
+        <img src="/img/sin-imagen.jpg" class="mx-auto card-img-top img-thumbnail img-fluid" style="width: 300px;" alt="sin Imagen vehiculo" />
+      {{/if}}
+      <div class="card-header">
+        <h4 class="card-title text-center"><i class="fas fa-fw fa-car fa-2x"></i> {{ this.brand }} {{ this.model }}</h4>
+      </div>
+      <div class="card-body"> 
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <h4 class="mt-2">PRECIO</h4>
+          </div>
+          <div class="col-md-4">
+            <h1 class="text-primary text-right">{{ this.price }}</h1>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <h4 class="mt-2">CANTIDAD</h4>
+          </div>
+          <div class="col-md-4">
+            <h1 class="text-primary text-right">{{ this.stock }}</h1>
+          </div>
+        </div>
+        
+      </div>
+      <div class="card-footer">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <form action="/cars/{{id}}/delete" method="POST">
+              <button type="submit" class="btn btn-outline-danger"><i class="fas fa-fw fa-trash-alt"></i> ELIMINAR VEHICULO</button>
+            </form>
+          </div>
+          <div class="col-md-4 text-center">
+            <a href="/" class="btn btn-outline-primary"><i class="fas fa-fw fa-undo"></i> VOLVER</a>
+          </div>
+          <div class="col-md-4 text-center">
+            <a href="/cars/{{id}}/update" class="btn btn-outline-warning"><i class="far fa-fw fa-edit"></i> EDITAR DATOS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
