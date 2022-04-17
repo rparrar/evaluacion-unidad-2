@@ -7,3 +7,4 @@
 8kia rio 5		https://cloudfront-us-east-1.images.arcpublishing.com/copesa/PSLHNGQ43VBHVNTA54SC7AQOZQ.jpg
 9suzuki ciaz	https://cdn.wheel-size.com/automobile/body/suzuki-ciaz-2019-2022-1625035535.5606313.jpg
 10FORD RANGER https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nextgenranger-wildtrak-front-3qtr-static-1-1637747734.jpg
+11 chevrol camar https://img.remediosdigitales.com/4fb038/2018-chevrolet-camaro-zl1-1le-001p/1366_521.jpg

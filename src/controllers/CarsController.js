@@ -16,12 +16,12 @@ class CarsController {
   async renderHomeWithCars (req, res) {
     const cars = await this.carsDao.getAll()
     const totalvehicles = cars.length
-    
+    //console.log(cars[cars.price.toLocalString])    
     res.render('home', {
       cars,
       title : "INICIO",
       totalvehicles,
-      activehome : 1
+      activehome : 1,
     })
   }
 
