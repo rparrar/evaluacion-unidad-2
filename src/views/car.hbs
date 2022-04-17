@@ -16,20 +16,20 @@
       </div>
       <div class="card-body"> 
         <div class="row justify-content-center">
-          <div class="col-md-6">
+          <div class="col-md-5">
             <h4 class="mt-2">PRECIO</h4>
           </div>
-          <div class="col-md-4">
-            <h1 class="text-primary text-right">{{ this.price }}</h1>
+          <div class="col-md-7">
+            <h1 class="text-primary text-right"><i class="fas fa-fw fa-dollar-sign"></i> {{numberFormat this.price}}</h1>
           </div>
         </div>
 
         <div class="row justify-content-center">
-          <div class="col-md-6">
+          <div class="col-md-5">
             <h4 class="mt-2">CANTIDAD</h4>
           </div>
-          <div class="col-md-4">
-            <h1 class="text-primary text-right">{{ this.stock }}</h1>
+          <div class="col-md-7">
+            <h1 class="text-primary text-right">{{ numberFormat this.stock }}</h1>
           </div>
         </div>
         

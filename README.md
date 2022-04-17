@@ -1,7 +1,11 @@
 # Evaluación de unidad 2 CIISA
 
-Este proyecto, utiliza sistema MVC, modelo-vista-controlador, y acompañado de BDD mysql, con servicio externo de Planetscale (https://planetscale.com/)
+Este proyecto, utiliza sistema MVC, modelo-vista-controlador, y apoyado con manejo de base de datos mysql, con servicio externo de Planetscale (https://planetscale.com/)
 
+Se encuentra para revisar de manera online en la siguiente dirección:
+```
+http://evaluacion-unidad-2.herokuapp.com/
+```
 Luego de clonar o descargar el repositorio;
 ```
 npm install
