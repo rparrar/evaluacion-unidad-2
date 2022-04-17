@@ -1,7 +1,6 @@
 const CarsDAO = require('../models/dao/CarsDAO')
 
 class CarsController {
-  
   constructor (db) {
     this.carsDao = new CarsDAO(db)
     this.renderHomeWithCars = this.renderHomeWithCars.bind(this)
@@ -18,9 +17,9 @@ class CarsController {
     const totalvehicles = cars.length
     res.render('home', {
       cars,
-      title : "INICIO",
+      title: 'INICIO',
       totalvehicles,
-      activehome : 1,
+      activehome: 1
     })
   }
 
@@ -34,7 +33,7 @@ class CarsController {
       }
 
       res.render('car', {
-        title : "VISTA INDIVIDUAL",
+        title: 'VISTA INDIVIDUAL',
         id,
         image: car.image,
         model: car.model,
@@ -44,16 +43,16 @@ class CarsController {
       })
     } catch (error) {
       console.log(error)
-      res.status(500).render('500',{
-        title : "ERROR EN EL SERVIDOR"
+      res.status(500).render('500', {
+        title: 'ERROR EN EL SERVIDOR'
       })
     }
   }
 
   renderCarCreationForm (req, res) {
     res.render('car-form', {
-      title : "AGREGANDO NUEVO VEHICULO",
-      activeadd : 1
+      title: 'AGREGANDO NUEVO VEHICULO',
+      activeadd: 1
     })
   }
 
@@ -75,12 +74,12 @@ class CarsController {
         model: car.model,
         price: car.price,
         stock: car.stock,
-        title : "ACTUALIZANDO VEHICULO",
+        title: 'ACTUALIZANDO VEHICULO'
       })
     } catch (error) {
       console.log(error)
-      res.status(500).render('500',{
-        title : "ERROR EN EL SERVIDOR"
+      res.status(500).render('500', {
+        title: 'ERROR EN EL SERVIDOR'
       })
     }
   }
@@ -99,8 +98,8 @@ class CarsController {
       res.redirect(`/cars/${id}`)
     } catch (error) {
       console.log(error)
-      res.status(500).render('500',{
-        title : "ERROR EN EL SERVIDOR"
+      res.status(500).render('500', {
+        title: 'ERROR EN EL SERVIDOR'
       })
     }
   }
@@ -119,8 +118,8 @@ class CarsController {
       res.redirect(`/cars/${id}`)
     } catch (error) {
       console.log(error)
-      res.status(500).render('500',{
-        title : "ERROR EN EL SERVIDOR"
+      res.status(500).render('500', {
+        title: 'ERROR EN EL SERVIDOR'
       })
     }
   }
@@ -139,15 +138,15 @@ class CarsController {
       await this.carsDao.delete(id)
 
       res.render('car-deleted', {
-        title : "VEHICULO ELIMINADO",
-        id : car.id,
-        brand : car.brand,
-        model : car.model
+        title: 'VEHICULO ELIMINADO',
+        id: car.id,
+        brand: car.brand,
+        model: car.model
       })
     } catch (error) {
       console.log(error)
-      res.status(500).render('500',{
-        title : "ERROR EN EL SERVIDOR"
+      res.status(500).render('500', {
+        title: 'ERROR EN EL SERVIDOR'
       })
     }
   }
