@@ -1,7 +1,7 @@
 {
-  "name": "simple-node-blog-mvc",
+  "name": "evaluacion-unidad-2-rparrar",
   "version": "1.0.0",
-  "description": "This project is a example for MVC pattern in NodeJS",
+  "description": "Proyecto que utiliza MVC en Node Js, con bdd Mysql",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
